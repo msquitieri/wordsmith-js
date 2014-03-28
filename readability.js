@@ -1,6 +1,6 @@
 var readability = {
   syllable_count : function(data) {
-  	if (typeof data != "string" && !(data instanceof Array)) return;
+  	if (typeof data != "string" && !(data instanceof Array)) return null;
   	if (data instanceof Array) data = data.join(" ");
 
   	console.log("passed");
