@@ -17,6 +17,18 @@ var readability = {
   	return totalSyllableCount;
   },
 
+  word_count : function(string) {
+    var usefulWords = [];
+    var words = string.split(" ");
+
+    console.log(words);
+    for (var i = words.length - 1; i >= 0; i--) {
+      if (words[i].trim() != "") usefulWords.push(words[i]);
+    }
+
+    return usefulWords.length;
+  },
+
   word_syllable_count : function(word) {
   	word = word.toLowerCase();                                     
   	if (word.length <= 3) { return 1; }                            
@@ -36,5 +48,4 @@ var readability = {
   	}
   	return realSentences.length;
   }
-
 }
