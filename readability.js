@@ -17,7 +17,13 @@ var readability = {
   	return totalSyllableCount;
   },
 
+  remove_punctuation : function(string) {
+    return string.replace(/[^a-zA-z ]/g, "");
+  },
+
   word_count : function(string) {
+    string = this.remove_punctuation(string);
+
     var usefulWords = [];
     var words = string.split(" ");
 
