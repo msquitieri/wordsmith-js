@@ -11,3 +11,5 @@ All of the functionality is found in the `readability` object. Here is an overvi
 
 - `syllable_count(data)` : where `data` can be a string or an array of strings. Returns the total number of syllables found in the string or null if you input an invalid value.
 - `sentence_count(string)` : returns the number of sentences found in the string by using the delimiter `/[\.?!]/`
+- `word_count(string)` : returns the number of words found in the string.
+- `remove_puctuation(string)` : removes everything except spaces and A-z characters.
