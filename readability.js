@@ -27,7 +27,9 @@ var readability = {
 
   sentence_count : function(string) {
   	var realSentences = [];
-  	var possibleSentences = string.split(/[\.?!]/);
+    var sentenceDelimeter = /[\.?!]/;
+  	
+    var possibleSentences = string.split(sentenceDelimeter);
   	for (var i = possibleSentences.length - 1; i >= 0; i--) {
   		var sentence = possibleSentences[i].trim();
   		if (sentence != "") realSentences.push(sentence);
