@@ -51,5 +51,13 @@ var readability = {
       if (sentence != "") realSentences.push(sentence);
     }
     return realSentences.length;
+  },
+
+  flesch_kincaid_grade_level : function(string) {
+    var wordCount = this.word_count(string);
+    var sentenceCount = this.sentence_count(string);
+    var syllableCount = this.syllable_count(string);
+
+    return ( 0.39*(wordCount/sentenceCount) + 11.8*(syllableCount/wordCount) - 15.59 ); 
   }
 }
