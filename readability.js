@@ -2,13 +2,8 @@ var readability = {
   syllable_count : function(data) {
     if (typeof data != "string" && !(data instanceof Array)) return null;
     if (data instanceof Array) data = data.join(" ");
-
-    console.log("passed");
-
-    var allWords = data.split(" ");
-    for (var i=0; i<allWords.length; i++) allWords[i] = allWords[i].trim();
-
-    console.log(allWords);
+    
+    var allWords = this.get_words(data);
 
     var totalSyllableCount = 0;
     for (var i = allWords.length - 1; i >= 0; i--) {
@@ -17,22 +12,25 @@ var readability = {
     return totalSyllableCount;
   },
 
+  get_words : function(string) {
+    string = this.remove_punctuation(string);
+    var properWords = [];
+    var trimmedWord;
+
+    var words = string.split(" ");
+    for (var i = 0; i < words.length; i++) {
+      trimmedWord = words[i].trim();
+      if (trimmedWord != "") properWords.push(trimmedWord)
+    };
+    return properWords;
+  },
+
   remove_punctuation : function(string) {
     return string.replace(/[^a-zA-z ]/g, "");
   },
 
   word_count : function(string) {
-    string = this.remove_punctuation(string);
-
-    var usefulWords = [];
-    var words = string.split(" ");
-
-    console.log(words);
-    for (var i = words.length - 1; i >= 0; i--) {
-      if (words[i].trim() != "") usefulWords.push(words[i]);
-    }
-
-    return usefulWords.length;
+    return this.get_words(string).length;
   },
 
   word_syllable_count : function(word) {
