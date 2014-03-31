@@ -17,3 +17,4 @@ All of the functionality is found in the `readability` object. Here is an overvi
 These methods are used to implement these readability algorithms:
 
 - `flesch_kincaid_grade_level(string)` : returns the [Flesch-Kincaid Grade Level](http://en.wikipedia.org/wiki/Flesch-Kincaid#Flesch.E2.80.93Kincaid_Grade_Level "Flesch-Kincaid Grade Level on Wikipedia") of the input string.
+- `flesch_reading_ease_score(string)` : returns the [Flesch Reading Ease Score](http://en.wikipedia.org/wiki/Flesch-Kincaid "Flesch Readability tests on Wikipedia") of the input string.
