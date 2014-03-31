@@ -59,5 +59,14 @@ var readability = {
     var syllableCount = this.syllable_count(string);
 
     return ( 0.39*(wordCount/sentenceCount) + 11.8*(syllableCount/wordCount) - 15.59 ); 
+  },
+
+  flesch_reading_ease_score : function(string) {
+    var wordCount = this.word_count(string);
+    var sentenceCount = this.sentence_count(string);
+    var syllableCount = this.syllable_count(string);
+
+    return ( 206.835 - 1.015*(wordCount/sentenceCount) - 84.6*(syllableCount/wordCount) ); 
+
   }
 }
