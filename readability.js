@@ -34,11 +34,13 @@ var readability = {
   },
 
   word_syllable_count : function(word) {
+    var syllableArray;
     word = word.toLowerCase();
     if (word.length <= 3) { return 1; }
     word = word.replace(/(?:[^laeiouy]es|ed|[^laeiouy]e)$/, '');
     word = word.replace(/^y/, '');
-    return word.match(/[aeiouy]{1,2}/g).length;
+    syllableArray = word.match(/[aeiouy]{1,2}/g);
+    return (!syllableArray) ? 0 : syllableArray.length;
   },
 
   sentence_count : function(string) {
