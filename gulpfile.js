@@ -14,7 +14,7 @@ gulp.task('build', function() {
   })
       .transform('babelify', {presets: ['es2015']})
       .bundle()
-      .pipe(source('readability.js'))
+      .pipe(source('readability.min.js'))
       .pipe(buffer())
       .pipe(uglify())
       .pipe(filesize())
