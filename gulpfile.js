@@ -8,13 +8,13 @@ var filesize = require('gulp-filesize');
 
 gulp.task('build', function() {
   return browserify({
-    entries: './src/readability.js',
+    entries: './src/wordsmith.js',
     extensions: ['.js'],
     debug: true
   })
       .transform('babelify', {presets: ['es2015']})
       .bundle()
-      .pipe(source('readability.min.js'))
+      .pipe(source('wordsmith.min.js'))
       .pipe(buffer())
       .pipe(uglify())
       .pipe(filesize())
