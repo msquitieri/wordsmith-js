@@ -1,7 +1,7 @@
 readability-js
 ==============
 
-[![Build Status](https://travis-ci.org/msquitieri/readability-js.svg?branch=master)](https://travis-ci.org/msquitieri/readability-js)
+[![Build Status](https://travis-ci.org/msquitieri/wordsmith-js.svg?branch=master)](https://travis-ci.org/msquitieri/wordsmith-js)
 
 Hello, there! I thought it would be interesting to implement some readability algorithms in javascript.
 
