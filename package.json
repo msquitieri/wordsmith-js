@@ -4,9 +4,10 @@
   "description": "Readability Algorithms in Javascript",
   "main": "wordsmith.js",
   "scripts": {
-    "test": "mocha --compilers js:babel-register --recursive",
-    "lint": "eslint src/**/*.js",
-    "build": "gulp build"
+    "test": "gulp test-ci",
+    "lint": "gulp lint",
+    "build": "gulp build",
+    "watch": "gulp watch"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,18 @@
     "url": "https://github.com/msquitieri/wordsmith-js/issues"
   },
   "homepage": "https://github.com/msquitieri/wordsmith-js#readme",
+  "eslintConfig": {
+    "extends": [
+      "airbnb-base"
+    ],
+    "plugins": [
+      "import"
+    ],
+    "env": {
+      "browser": true
+    },
+    "parser": "babel-eslint"
+  },
   "devDependencies": {
     "babel-cli": "^6.18.0",
     "babel-eslint": "^7.1.0",
@@ -34,9 +47,13 @@
     "babelify": "^7.3.0",
     "browserify": "^13.1.1",
     "chai": "^3.5.0",
-    "eslint": "^3.10.0",
+    "eslint": "^3.12.2",
+    "eslint-config-airbnb-base": "^11.0.0",
+    "eslint-plugin-import": "^2.2.0",
     "gulp": "^3.9.1",
+    "gulp-eslint": "^3.0.1",
     "gulp-filesize": "0.0.6",
+    "gulp-mocha": "^3.0.1",
     "gulp-uglify": "^2.0.0",
     "mocha": "^3.1.2",
     "vinyl-buffer": "^1.0.0",
