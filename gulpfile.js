@@ -30,13 +30,13 @@ gulp.task('build', function() {
 });
 
 gulp.task('lint', function() {
-  gulp.src(paths.allSrc)
+  return gulp.src(paths.allSrc)
       .pipe(eslint())
       .pipe(eslint.format());
 });
 
 gulp.task('lint-fail', function() {
-  gulp.src(paths.allSrc)
+  return gulp.src(paths.allSrc)
       .pipe(eslint())
       .pipe(eslint.format())
       .pipe(eslint.failAfterError());
@@ -45,7 +45,7 @@ gulp.task('lint-fail', function() {
 gulp.task('test-ci', ['test', 'lint-fail']);
 
 gulp.task('test', function() {
-  gulp.src(paths.allTests)
+  return gulp.src(paths.allTests)
       .pipe(mocha());
 });
 
