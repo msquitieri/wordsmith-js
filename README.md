@@ -1,4 +1,4 @@
-readability-js
+wordsmith-js
 ==============
 
 [![Build Status](https://travis-ci.org/msquitieri/wordsmith-js.svg?branch=master)](https://travis-ci.org/msquitieri/wordsmith-js)
