@@ -10,8 +10,6 @@ Documentation
 
 Everything is written in ES6, transpiled by Babel, and bundled using Browserify. Tests are written with Mocha.
 
-
-
 All of the functionality is found in the `Wordsmith` object. Here is an overview of its methods:
 
 - `Wordsmith.syllableCount(data)` : where `data` can be a string or an array of strings. Returns the total number of syllables found in the string or null if you input an invalid value.
@@ -27,10 +25,10 @@ These methods are used to implement these readability algorithms:
 Building
 ==============
 
-Just run `npm run build`. This will place `readability.min.js` into the `dist/` directory.
+Make sure you have [yarn](https://yarnpkg.com) installed. Then just run `yarn build`. This will place `wordsmith.min.js` into this `dist/` directory.
 
 Running Tests
 ==============
 
-Just run `npm run test`
+Just run `yarn test`
 
