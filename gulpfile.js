@@ -35,11 +35,20 @@ gulp.task('lint', function() {
       .pipe(eslint.format());
 });
 
+gulp.task('lint-fail', function() {
+  gulp.src(paths.allSrc)
+      .pipe(eslint())
+      .pipe(eslint.format())
+      .pipe(eslint.failAfterError());
+});
+
+gulp.task('test-ci', ['test', 'lint-fail']);
+
 gulp.task('test', function() {
   gulp.src(paths.allTests)
       .pipe(mocha());
 });
 
 gulp.task('watch', function() {
-  gulp.watch('./src/**/*.js', ['lint', 'test']);
+  gulp.watch(paths.allSrc, ['lint', 'test']);
 });
